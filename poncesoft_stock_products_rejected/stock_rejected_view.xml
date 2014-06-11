@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="sequence_rejected" model="ir.sequence.type">
+            <field name="name">Codigo Averias</field>
+            <field name="code">stock.rejected.lines</field>
+        </record>
+
+        <record id="sequence_rejected_def" model="ir.sequence">
+            <field name="name">Secuencia Averias</field>
+            <field name="code">stock.rejected.lines</field>
+            <field name="prefix">AV-</field>
+            <field name="padding">5</field>
+            <field name="implementation">no_gap</field>
+        </record>
+
+
+        <record id="openacademy_student_tree" model="ir.ui.view">
+            <field name="name">Listado de Productos Dañados</field>
+            <field name="model">stock.rejected.lines</field>
+            <field name="arch" type="xml">
+                <tree string="Productos Dañados" editable="bottom">
+                    <field name="date" attrs="{'readonly':[('state','=','done')]}"/>
+                    <field name="stock_id" readonly="1"/>
+                    <field name="product_id" on_change="on_change_sequence(product_id)" attrs="{'readonly':[('state','=','done')]}"/>
+                    <field name="qty" attrs="{'readonly':[('state','=','done')]}" sum="Cantidad"/>
+                    <field name="notes" attrs="{'readonly':[('state','=','done')]}"/>
+                    <field name="name" attrs="{'readonly':[('state','=','done')]}"/>
+                    <field name="state" invisible="1" />
+                </tree>                
+            </field>
+        </record>
+
+        <record id="stock_rejected_lines_filter" model="ir.ui.view">
+          <field name="name">stock.rejected.lines.filter</field>
+          <field name="model">stock.rejected.lines</field>
+          <field name="type">search</field>
+          <field name="priority" eval="5"/>
+          <field name="arch" type="xml">
+            <search string="Productos Dañados">
+                    <field name="date" />
+                    <field name="product_id"/>
+                    <field name="qty" />
+                    <field name="notes" />
+                    <field name="name" />
+                
+                <group string="Agrupar por...">
+                    <filter string="Fecha" name="date_ac" domain="[]" context="{'group_by':'date'}"/>
+                    <filter string="Albaran" name="stock" domain="[]" context="{'group_by':'stock_id'}"/>
+                    <filter string="Producto" name="product" domain="[]" context="{'group_by':'product_id'}"/>
+                </group>
+            </search>
+          </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_stock_rejected_lines">
+            <field name="name">Averias</field>
+            <field name="res_model">stock.rejected.lines</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{'search_default_date_ac':1}</field>
+            <field name="domain">[]</field>
+        </record>
+
+
+    <menuitem name="Averias" id="menu_stock_rejected" parent="stock.menu_traceability" action="action_stock_rejected_lines" sequence="2" />
+
+    </data>
+</openerp>

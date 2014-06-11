@@ -1,0 +1,78 @@
+<openerp>
+<data>
+
+    <!--  Grupo para Permisos especiales pos.order -->
+
+    <record id="ventas_ps_manager" model="res.groups"> <!-- en res.groups siempre se va almacenar nuestro record el id es nuetsro id de nuestro grupo, para definir las reglasd e cada usuario utilizamos archivos separados por com o archivos csv -->
+        <field name="name">Ventas / Permisos Especiales</field>
+        <field name="comment">Los Usuarios de Este Grupo pueden Autorizar El aumento de Credito</field>
+    </record>
+
+        <!-- Creando la Vista Asistente -->
+
+         <record id="sale_order_extend_credit_form" model="ir.ui.view">
+            <field name="name">Extender Credito</field>
+            <field name="model">sale.order.extend.credit</field>
+            <field name="arch" type="xml">
+              <form string="Asistente para Extender Credito de Clientes" version="7.0">
+                    <sheet>
+                       <group col="4" >
+                            <field name="partner_id" />
+                       </group>
+                       <group col="4" >
+                           
+                            <field name="credit" />
+                            <field name="credit_limit" />
+                        </group>
+                        <group>
+                            <field name="credit_extend" />
+                       </group>
+                       <group>
+                        <field name="password" password="True" />
+                       </group>
+                       <p/>
+                       <center><h3>Escriba correctamente su contraseña respetando Mayusculas y Minusculas, pulse "Autorizar"</h3></center>
+                    </sheet>
+                  <footer>
+                    <center>
+                      <button name="auth" string="Autorizar" icon="gtk-execute" type="object" class="oe_highlight"/>
+                      ó
+                      <button string="Cancel" class="oe_link" special="cancel"/>
+                    </center>
+                  </footer>
+             </form>
+            </field>
+        </record>
+
+
+        <act_window name="Extender Credito de Clientes"
+            res_model="sale.order.extend.credit"
+            src_model="sale.order.extend.credit"
+            key2="client_action_multi"
+            multi="True"
+            view_mode="form"
+            view_type="form"
+            target="new"
+            id="action_sale_order_extend_credit"/>
+
+
+        <record model="ir.ui.view" id="inhrt_sale_order_form_view">
+            <field name="name">inherit.sale.order.form.view</field>
+            <field name="model">sale.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+            <data>
+                <field name="origin" position="after" >
+                    <field name="exced_credit" />
+                </field>
+                <field name="state" position="before">
+                    <button name="%(action_sale_order_extend_credit)d" string="Asistente Credito" icon="terp-dolar_ok!" type="action" attrs="{'invisible':[('exced_credit','=',False)]}"/>
+                </field>
+            </data>
+            </field>
+        </record>
+
+
+</data>
+</openerp>

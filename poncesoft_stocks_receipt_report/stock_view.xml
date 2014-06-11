@@ -1,0 +1,48 @@
+<openerp>
+<data>
+
+        <!-- Add fields to Stock Picking-->
+
+        <record model="ir.ui.view" id="view_picking_out_form_inherit_rej" >
+        <field name="name">stock.picking.out.form.inherit</field>
+        <field name="model">stock.picking.out</field>
+        <field name="inherit_id" ref="stock.view_picking_form" />
+        <field name="arch" type="xml">
+            <field name="auto_picking" position="after" >
+                <field name="date_exit" readonly="1"/>
+                <field name="placa" readonly="1"/>
+                <field name="conductor" readonly="1"/>
+                <field name="notes_exit" readonly="1"/>
+                <field name="register_exit" readonly="1"/>
+            </field>
+            <field name="state" position="before" >
+                <button name="%(action_stock_exit_products)d" string="Autorizacion de Mercancia" type="action"
+                            attrs="{'invisible':[('register_exit','=',True)]}" class="oe_highlight"/>
+                <button name="print_receipt_report" string="Reporte Autorizacion" type="object"
+                            attrs="{'invisible':[('register_exit','=',False),('placa','!=',None)]}"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_picking_in_form_inherit_rej" >
+        <field name="name">stock.picking.in.form.inherit</field>
+        <field name="model">stock.picking.in</field>
+        <field name="inherit_id" ref="stock.view_picking_form" />
+        <field name="arch" type="xml">
+            <field name="auto_picking" position="after" >
+                <field name="date_exit" readonly="1"/>
+                <field name="placa" readonly="1"/>
+                <field name="conductor" readonly="1"/>
+                <field name="notes_exit" readonly="1"/>
+                <field name="register_exit" readonly="1"/>
+            </field>
+            <field name="state" position="before" >
+                <button name="%(action_stock_exit_products)d" string="Autorizacion de Mercancia" type="action"
+                            attrs="{'invisible':[('register_exit','=',True)]}" class="oe_highlight"/>
+                <button name="print_receipt_report" string="Reporte Autorizacion" type="object"
+                            attrs="{'invisible':[('register_exit','=',False),('placa','!=',None)]}"/>
+            </field>
+        </field>
+    </record>
+</data>
+</openerp>

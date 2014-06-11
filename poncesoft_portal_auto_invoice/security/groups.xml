@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+	<record id="portal_cfdi_manager" model="res.groups"> <!-- en res.groups siempre se va almacenar nuestro record el id es nuetsro id de nuestro grupo, para definir las reglasd e cada usuario utilizamos archivos separados por com o archivos csv -->
+		<field name="name">Portal CFDI / Manager</field>
+	</record>
+
+    </data>
+</openerp>

@@ -1,0 +1,17 @@
+<openerp>
+<data>
+
+<!-- Add fields to Invoice -->
+        <record id="view_invoice_form_inherit_stocks_send_dm3" model="ir.ui.view">
+            <field name="name">product.product.rejected</field>
+            <field name="model">product.product</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <field name="uom_id" position="before">
+                    <field name="sequence_rejected_id" />
+                </field>
+            </field>
+        </record>
+</data>
+</openerp>

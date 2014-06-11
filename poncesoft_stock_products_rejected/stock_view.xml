@@ -1,0 +1,21 @@
+<openerp>
+<data>
+
+        <!-- Add fields to Stock Picking-->
+
+        <record model="ir.ui.view" id="view_picking_in_form_inherit_rej" >
+        <field name="name">stock.picking.in.form.inherit</field>
+        <field name="model">stock.picking.in</field>
+        <field name="inherit_id" ref="stock.view_picking_in_form" />
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Averias" >
+                    <separator string="Registro de Productos Averiados"/>
+                    <field name="rejected_ids" attrs="{'readonly':[('state','=','done')]}"/>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</data>
+</openerp>

@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Factura-2013-Final" language="groovy" pageWidth="225" pageHeight="562" columnWidth="225" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="2.200000000000041"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="307"/>
+	<property name="OPENERP_RELATIONS" value="[&apos;invoice_line&apos;]"/>
+	<parameter name="SUBREPORT_DS" class="java.lang.Object"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String"/>
+	<parameter name="STANDARD_DIR" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DS_2" class="java.lang.Object"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="Nombre-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania_Emisora_de_la_Factura-company_emitter_id/Direccion_de_Factura_de_la_Compania_Matriz-address_invoice_parent_company_id/Nombre-name]]></fieldDescription>
+	</field>
+	<field name="Logo-logo" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania_Emisora_de_la_Factura-company_emitter_id/Logo-logo]]></fieldDescription>
+	</field>
+	<field name="NIF-vat" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania_Emisora_de_la_Factura-company_emitter_id/Direccion_de_Factura_de_la_Compania_Matriz-address_invoice_parent_company_id/NIF-vat]]></fieldDescription>
+	</field>
+	<field name="Regimen_Fiscal-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania_Emisora_de_la_Factura-company_emitter_id/Direccion_de_Factura_de_la_Compania_Matriz-address_invoice_parent_company_id/Regimen_fiscal-regimen_fiscal_id/Regimen_Fiscal-name]]></fieldDescription>
+	</field>
+	<field name="Calle-street" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania_Emisora_de_la_Factura-company_emitter_id/Direccion_de_Factura_de_la_Compania_Matriz-address_invoice_parent_company_id/Calle-street]]></fieldDescription>
+	</field>
+	<field name="Calle2-street2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania_Emisora_de_la_Factura-company_emitter_id/Direccion_de_Factura_de_la_Compania_Matriz-address_invoice_parent_company_id/Calle2-street2]]></fieldDescription>
+	</field>
+	<field name="C.P.-zip" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania_Emisora_de_la_Factura-company_emitter_id/Direccion_de_Factura_de_la_Compania_Matriz-address_invoice_parent_company_id/C.P.-zip]]></fieldDescription>
+	</field>
+	<field name="Nombre_provincia-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania_Emisora_de_la_Factura-company_emitter_id/Direccion_de_Factura_de_la_Compania_Matriz-address_invoice_parent_company_id/Provincia-state_id/Nombre_provincia-name]]></fieldDescription>
+	</field>
+	<field name="Nombre_del_pais-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania_Emisora_de_la_Factura-company_emitter_id/Direccion_de_Factura_de_la_Compania_Matriz-address_invoice_parent_company_id/Pais-country/Nombre_del_pais-name]]></fieldDescription>
+	</field>
+	<field name="Ciudad-city" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania_Emisora_de_la_Factura-company_emitter_id/Direccion_de_Factura_de_la_Compania_Matriz-address_invoice_parent_company_id/Ciudad-city]]></fieldDescription>
+	</field>
+	<field name="Nombre-name2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Empresa-partner_id/Nombre-name]]></fieldDescription>
+	</field>
+	<field name="Nombre_del_pais-name2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Empresa-partner_id/Pais-country/Nombre_del_pais-name]]></fieldDescription>
+	</field>
+	<field name="Nombre_provincia-name2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Empresa-partner_id/Provincia-state_id/Nombre_provincia-name]]></fieldDescription>
+	</field>
+	<field name="Calle-street2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Empresa-partner_id/Calle-street]]></fieldDescription>
+	</field>
+	<field name="Calle2-street22" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Empresa-partner_id/Calle2-street2]]></fieldDescription>
+	</field>
+	<field name="Ciudad-city2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Empresa-partner_id/Ciudad-city]]></fieldDescription>
+	</field>
+	<field name="NIF-vat2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Empresa-partner_id/NIF-vat]]></fieldDescription>
+	</field>
+	<field name="Nombre-name3" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Empresa-partner_id/Empresa_relacionada-parent_id/Nombre-name]]></fieldDescription>
+	</field>
+	<field name="C.P.-zip2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Empresa-partner_id/C.P.-zip]]></fieldDescription>
+	</field>
+	<field name="Serie_de_Folios-serie" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Diario-journal_id/Secuencia_del_asiento-sequence_id/Aprovacion_Actual-approval_id/Serie_de_Folios-serie]]></fieldDescription>
+	</field>
+	<field name="Numero-number" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Numero-number]]></fieldDescription>
+	</field>
+	<field name="Fecha_factura-date_invoice" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Fecha_factura-date_invoice]]></fieldDescription>
+	</field>
+	<field name="Metodo_de_Pago-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Metodo_de_Pago-pay_method_id/Metodo_de_Pago-name]]></fieldDescription>
+	</field>
+	<field name="Ultimos_4_digitos-last_acc_number" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Cuenta_bancaria-partner_bank_id/Ultimos_4_digitos-last_acc_number]]></fieldDescription>
+	</field>
+	<field name="Regimen_Fiscal-name2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania_Emisora_de_la_Factura-company_emitter_id/Direccion_de_Factura_de_la_Compania_Matriz-address_invoice_parent_company_id/Regimen_fiscal-regimen_fiscal_id/Regimen_Fiscal-name]]></fieldDescription>
+	</field>
+	<field name="Regimen_Fiscal-name3" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania-company_id/Direccion_de_Factura_de_la_Compania_Matriz-address_invoice_parent_company_id/Regimen_fiscal-regimen_fiscal_id/Regimen_Fiscal-name]]></fieldDescription>
+	</field>
+	<field name="Descripcion-description" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania-company_id/Direccion_de_Factura_de_la_Compania_Matriz-address_invoice_parent_company_id/Regimen_fiscal-regimen_fiscal_id/Descripcion-description]]></fieldDescription>
+	</field>
+	<field name="Name-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Comercial-user_id/Name-name]]></fieldDescription>
+	</field>
+	<field name="Name-name2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Lineas_de_factura-invoice_line/Producto-product_id/Name-name]]></fieldDescription>
+	</field>
+	<field name="Cantidad-quantity" class="java.lang.Float">
+		<fieldDescription><![CDATA[/data/record/Lineas_de_factura-invoice_line/Cantidad-quantity]]></fieldDescription>
+	</field>
+	<field name="Referencia-default_code" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Lineas_de_factura-invoice_line/Producto-product_id/Referencia-default_code]]></fieldDescription>
+	</field>
+	<field name="Descripcion-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Lineas_de_factura-invoice_line/Descripcion-name]]></fieldDescription>
+	</field>
+	<field name="Descuento-discount" class="java.lang.Float">
+		<fieldDescription><![CDATA[/data/record/Lineas_de_factura-invoice_line/Descuento-discount]]></fieldDescription>
+	</field>
+	<field name="Precio_unidad-price_unit" class="java.lang.Float">
+		<fieldDescription><![CDATA[/data/record/Lineas_de_factura-invoice_line/Precio_unidad-price_unit]]></fieldDescription>
+	</field>
+	<field name="Importe-price_subtotal" class="java.lang.Float">
+		<fieldDescription><![CDATA[/data/record/Lineas_de_factura-invoice_line/Importe-price_subtotal]]></fieldDescription>
+	</field>
+	<field name="Total-amount_total" class="java.lang.Double">
+		<fieldDescription><![CDATA[/data/record/Total-amount_total]]></fieldDescription>
+	</field>
+	<field name="Subtotal-amount_untaxed" class="java.lang.Double">
+		<fieldDescription><![CDATA[/data/record/Subtotal-amount_untaxed]]></fieldDescription>
+	</field>
+	<field name="Nombre-name4" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Lineas_de_factura-invoice_line/Unit_of_Measure-uos_id/Nombre-name]]></fieldDescription>
+	</field>
+	<field name="Monto_en_Letras-amount_to_text" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Monto_en_Letras-amount_to_text]]></fieldDescription>
+	</field>
+	<field name="Cadena_Original-cadena_original" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Cadena_Original-cadena_original]]></fieldDescription>
+	</field>
+	<field name="Certificado-certificado" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Certificado-certificado]]></fieldDescription>
+	</field>
+	<field name="No._Certificate-no_certificado" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/No._Certificate-no_certificado]]></fieldDescription>
+	</field>
+	<field name="Numero-number2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Numero-number]]></fieldDescription>
+	</field>
+	<field name="Sello-sello" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Sello-sello]]></fieldDescription>
+	</field>
+	<field name="Ultimos_4_digitos-last_acc_number2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Numero_de_Cuenta-acc_payment/Ultimos_4_digitos-last_acc_number]]></fieldDescription>
+	</field>
+	<field name="Clave_del_Porteador-key_carrier" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania_Emisora_de_la_Factura-company_emitter_id/Clave_del_Porteador-key_carrier]]></fieldDescription>
+	</field>
+	<field name="Numero_de_Convenio-agreement_number" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania_Emisora_de_la_Factura-company_emitter_id/Numero_de_Convenio-agreement_number]]></fieldDescription>
+	</field>
+	<field name="Adenda-adenda" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Adenda-adenda]]></fieldDescription>
+	</field>
+	<field name="Numero_de_Relacion-number_relationship" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Numero_de_Relacion-number_relationship]]></fieldDescription>
+	</field>
+	<field name="Numero_de_Cedula-identification_number" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Numero_de_Cedula-identification_number]]></fieldDescription>
+	</field>
+	<field name="Ingreso_o_Egreso-entry_invoice" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Ingreso_o_Egreso-entry_invoice]]></fieldDescription>
+	</field>
+	<field name="Plazo_de_pago-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Empresa-partner_id/Plazo_de_pago_de_cliente-property_payment_term/Plazo_de_pago-name]]></fieldDescription>
+	</field>
+	<field name="Telefono-phone" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania_Emisora_de_la_Factura-company_emitter_id/Direccion_de_Factura_de_la_Compania_Matriz-address_invoice_parent_company_id/Telefono-phone]]></fieldDescription>
+	</field>
+	<field name="Nombre-name5" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Direccion_Destino-arrival_address_id/Nombre-name]]></fieldDescription>
+	</field>
+	<field name="Calle-street3" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Direccion_Destino-arrival_address_id/Calle-street]]></fieldDescription>
+	</field>
+	<field name="Calle2-street23" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Direccion_Destino-arrival_address_id/Calle2-street2]]></fieldDescription>
+	</field>
+	<field name="C.P.-zip3" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Direccion_Destino-arrival_address_id/C.P.-zip]]></fieldDescription>
+	</field>
+	<field name="Comentarios-comment" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Comentarios-comment]]></fieldDescription>
+	</field>
+	<field name="CIF-cif_file" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania_Emisora_de_la_Factura-company_emitter_id/CIF-cif_file]]></fieldDescription>
+	</field>
+	<field name="Monto_FIjo-fixed_amount" class="java.lang.Double">
+		<fieldDescription><![CDATA[/data/record/Cartas_Porte-waybill_ids/Tarifa_Cliente-waybill_customer_factor/Monto_FIjo-fixed_amount]]></fieldDescription>
+	</field>
+	<field name="Unidad_de_medida-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Lineas_de_factura-invoice_line/Unidad_de_medida-uos_id/Unidad_de_medida-name]]></fieldDescription>
+	</field>
+	<variable name="Importe-price_subtotal_1" class="java.lang.Float" calculation="Sum">
+		<variableExpression><![CDATA[$F{Importe-price_subtotal}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="207" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Transparent" x="10" y="149" width="191" height="51"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="10" y="104" width="191" height="38"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="13" y="149" width="22" height="9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Folio: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="133" width="42" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RFC:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="112" width="45" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DOMICILIO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="84" y="36" width="28" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[R.F.C. :  ]]></text>
+			</staticText>
+			<image onErrorType="Blank">
+				<reportElement x="10" y="-1" width="75" height="67"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{Logo-logo}]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="85" y="6" width="116" height="28"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Nombre-name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="36" width="90" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{NIF-vat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="84" y="45" width="117" height="34"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["DOMICILIO FISCAL: "+$F{Calle-street}+", "+$F{Calle2-street2}+", "+$F{Ciudad-city}+", "+$F{Nombre_provincia-name}+", "+$F{Nombre_del_pais-name}+", CP: "+$F{C.P.-zip}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="41" y="105" width="160" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Nombre-name3}+" "+$F{Nombre-name2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="55" y="134" width="146" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{NIF-vat2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="55" y="113" width="146" height="21"/>
+				<textElement verticalAlignment="Top">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Calle: "+$F{Calle-street2}+" "+$F{Calle2-street22}+", CP: "+$F{C.P.-zip2}+", "+$F{Ciudad-city2} +", "+$F{Nombre_provincia-name2}+", "+$F{Nombre_del_pais-name2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement x="38" y="149" width="90" height="9" forecolor="#010101"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[( $F{Numero-number2} == null ? "Sin folio" : $F{Numero-number2} )]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="38" y="158" width="40" height="9" forecolor="#010101"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Fecha_factura-date_invoice}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="10" y="142" width="191" height="7" backcolor="#0091FF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATOS DE LA FACTURACION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="10" y="97" width="191" height="7" backcolor="#0091FF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMITIDO A]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="104" width="31" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CLIENTE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="176" width="65" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORMA DE PAGO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="184" width="66" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[METODO DE PAGO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="79" width="66" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REGIMEN FISCAL:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="192" width="86" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONDICIONES DE PAGO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="176" width="123" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Pago en una sola exhibicion]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="79" y="184" width="123" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Metodo_de_Pago-name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="79" y="79" width="122" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[( $F{Regimen_Fiscal-name2} == null ? "PERSONA MORAL REGIMEN SIMPLIFICADO" : $F{Regimen_Fiscal-name2} )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="167" width="25" height="9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="38" y="167" width="164" height="9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[( $F{Ingreso_o_Egreso-entry_invoice} == null ? "INGRESO" : $F{Ingreso_o_Egreso-entry_invoice} )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="192" width="103" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Plazo_de_pago-name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="87" width="66" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELEFONO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="79" y="87" width="118" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Telefono-phone}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="158" width="25" height="9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="10" y="200" width="192" height="7" backcolor="#0091FF"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DETALLE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="12" splitType="Stretch">
+			<staticText>
+				<reportElement x="126" y="0" width="22" height="12" forecolor="#010101"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UDM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="105" y="0" width="21" height="12" forecolor="#010101"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CANTIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="0" width="25" height="12" forecolor="#010101"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CODIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="35" y="0" width="70" height="12" forecolor="#010101"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="148" y="0" width="22" height="12" forecolor="#010101"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRECIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="0" width="31" height="12" forecolor="#010101"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUBTOTAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Prevent">
+			<textField isStretchWithOverflow="true" pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="148" y="0" width="22" height="16"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{Precio_unidad-price_unit}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="10" y="0" width="25" height="16"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Referencia-default_code}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="35" y="0" width="70" height="16"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Descripcion-name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="105" y="0" width="21" height="16"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{Cantidad-quantity}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="126" y="0" width="22" height="16"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Unidad_de_medida-name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="170" y="0" width="31" height="16"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{Importe-price_subtotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="12" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="0" width="192" height="12"/>
+				<textElement textAlignment="Center">
+					<font size="5"/>
+				</textElement>
+				<text><![CDATA[Resolución de facturación 1110000574448 del 07  abril de 2014,  Para POS del P001 al P2000.]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement x="128" y="0" width="42" height="10"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUB TOTAL:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="32" width="118" height="9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CANTIDAD CON LETRA:]]></text>
+			</staticText>
+			<textField pattern="#,##0.00">
+				<reportElement x="170" y="0" width="32" height="10"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[( $F{Subtotal-amount_untaxed} == null ? 0.00 : $F{Subtotal-amount_untaxed} )]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="127" y="10" width="75" height="46"/>
+				<dataSourceExpression><![CDATA[$P{SUBREPORT_DS}]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "factura-subreport2.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="12" y="0" width="115" height="32"/>
+				<textElement verticalAlignment="Top">
+					<font size="5" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["OBSERVACIONES: "+$F{Comentarios-comment}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="127" y="56" width="43" height="10"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="11" y="41" width="117" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="5" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Monto_en_Letras-amount_to_text}]]></textFieldExpression>
+			</textField>
+			<textField pattern=" #,##0.00">
+				<reportElement x="170" y="56" width="30" height="10"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{Total-amount_total}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="0" width="191" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

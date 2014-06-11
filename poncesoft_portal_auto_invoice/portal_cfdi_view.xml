@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="portal_cfdi_invoice_tree" model="ir.ui.view">
+          <field name="name">portal.cfdi.invoice.tree</field>
+          <field name="model">portal.cfdi.invoice</field>
+          <field name="type">tree</field>
+          <field name="priority" eval="5"/>
+          <field name="arch" type="xml">
+            <tree string="Solicitud de Facturación" create="false">
+                <field name="date" />
+                <field name="partner" />
+                <field name="sale" />
+                <field name="invoice" />
+                <field name="user_id" />
+            </tree>
+          </field>
+        </record>
+
+        <record id="portal_cfdi_invoice_form" model="ir.ui.view">
+          <field name="name">portal.cfdi.invoice.form</field>
+          <field name="model">portal.cfdi.invoice</field>
+            <field name="arch" type="xml">
+                <form string="Resultado Solicitud CFDI" version="7.0" create="false">
+                    <head>
+                    </head>
+                    <sheet>
+                      <h1>Facturación CFDI</h1>
+                      <group col="4">
+                        <field name="date" />
+                        <field name="partner" />
+                        <field name="sale" />
+                        <field name="invoice" />
+                        <field name="user_id" />
+                      </group>
+                      <h1>Documentos Adjuntos</h1>
+                      <field name="line_ids" readonly="1" mode="tree">
+                        <tree string="Adjuntos">
+                          <field name="datas_fname" invisible="1" />
+                            <field name="name" filename="datas_fname"/>
+                            <field name="type"/>
+                        </tree>
+                      </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+          <!-- <record model="ir.actions.act_window" id="action_stock_shops_report">
+              <field name="name">Existencias por Tienda</field>
+              <field name="res_model">stock.shops.analysis</field>
+              <field name="view_type">form</field>
+              <field name="view_mode">form</field>
+              <field name="search_view_id" ref="stock_shops_analysis_filter"/>
+          </record> -->
+
+        <record id="action_portal_cfdi_invoices" model="ir.actions.act_window">
+            <field name="name">Resultado Solicitud CFDI</field>
+            <field name="res_model">portal.cfdi.invoice</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="portal_cfdi_invoice_form"/>
+            <field name="target">inline</field>
+        </record>
+
+
+    </data>
+</openerp>

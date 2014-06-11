@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Autorizacion_de_Mercancia" language="groovy" pageWidth="612" pageHeight="396" columnWidth="598" leftMargin="7" rightMargin="7" topMargin="7" bottomMargin="7">
+	<property name="ireport.zoom" value="1.4641000000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="OPENERP_RELATIONS" value="[&apos;move_lines&apos;]"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="Logo-logo" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania-company_id/Logo-logo]]></fieldDescription>
+	</field>
+	<field name="Nombre_de_la_compania-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania-company_id/Nombre_de_la_compania-name]]></fieldDescription>
+	</field>
+	<field name="Calle-street" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania-company_id/Empresa-partner_id/Calle-street]]></fieldDescription>
+	</field>
+	<field name="Calle2-street2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania-company_id/Empresa-partner_id/Calle2-street2]]></fieldDescription>
+	</field>
+	<field name="Tipo_de_envio-type" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Tipo_de_envio-type]]></fieldDescription>
+	</field>
+	<field name="Referencia-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Referencia-name]]></fieldDescription>
+	</field>
+	<field name="Fecha_Hora_Autorizacion-date_exit" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Fecha_Hora_Autorizacion-date_exit]]></fieldDescription>
+	</field>
+	<field name="Placa-placa" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Placa-placa]]></fieldDescription>
+	</field>
+	<field name="Conductor-conductor" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Conductor-conductor]]></fieldDescription>
+	</field>
+	<field name="Observaciones-notes_exit" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Observaciones-notes_exit]]></fieldDescription>
+	</field>
+	<field name="C.P.-zip" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania-company_id/C.P.-zip]]></fieldDescription>
+	</field>
+	<field name="Ciudad-city" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania-company_id/Ciudad-city]]></fieldDescription>
+	</field>
+	<field name="Nombre_provincia-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania-company_id/Provincia-state_id/Nombre_provincia-name]]></fieldDescription>
+	</field>
+	<field name="Nombre_del_pais-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania-company_id/Provincia-state_id/Pais-country_id/Nombre_del_pais-name]]></fieldDescription>
+	</field>
+	<field name="Name-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Albaranes_internos-move_lines/Producto-product_id/Name-name]]></fieldDescription>
+	</field>
+	<field name="Unidad_de_medida-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Albaranes_internos-move_lines/Unidad_de_medida-product_uom/Unidad_de_medida-name]]></fieldDescription>
+	</field>
+	<field name="Cantidad-product_qty" class="java.lang.Float">
+		<fieldDescription><![CDATA[/data/record/Albaranes_internos-move_lines/Cantidad-product_qty]]></fieldDescription>
+	</field>
+	<field name="Referencia_interna-default_code" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Albaranes_internos-move_lines/Producto-product_id/Referencia_interna-default_code]]></fieldDescription>
+	</field>
+	<field name="Telefono-phone" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Compania-company_id/Telefono-phone]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="89" splitType="Stretch">
+			<image>
+				<reportElement x="13" y="4" width="100" height="83"/>
+				<imageExpression class="java.lang.String"><![CDATA[( $F{Logo-logo}!=null ? $F{Logo-logo} : false )]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="113" y="4" width="420" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Nombre_de_la_compania-name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="113" y="25" width="420" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Calle2-street2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="113" y="41" width="420" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Ciudad-city}+", "+$F{Nombre_provincia-name}+", "+$F{Nombre_del_pais-name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="533" y="57" width="0" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Tipo_de_envio-type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="113" y="57" width="420" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[( $F{Tipo_de_envio-type} == 'out' ? "REPORTE AUTORIZACION DE SALIDA DE MERCANCIA": "REPORTE AUTORIZACION DE ENTRADA DE MERCANCIA " )]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="78" splitType="Stretch">
+			<textField>
+				<reportElement x="289" y="0" width="296" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Albaran: "+$F{Referencia-name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="163" y="22" width="211" height="12"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Fecha_Hora_Autorizacion-date_exit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="22" width="150" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha/Hora Autorizacion:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="50" width="68" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Conductor:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="64" width="100" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Observaciones:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="54" y="36" width="320" height="12"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Placa-placa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="81" y="50" width="293" height="12"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Conductor-conductor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="113" y="64" width="472" height="12"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Observaciones-notes_exit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="36" width="41" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Placa:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<staticText>
+				<reportElement x="13" y="0" width="339" height="15"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Producto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="352" y="0" width="118" height="15"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Unidad de Medida]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="0" width="115" height="15"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement x="13" y="0" width="339" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["["+$F{Referencia_interna-default_code}+"] "+$F{Name-name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="352" y="0" width="118" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Unidad_de_medida-name}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00">
+				<reportElement x="470" y="0" width="115" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{Cantidad-product_qty}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band/>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="86">
+			<staticText>
+				<reportElement x="203" y="30" width="244" height="20"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nombre y Firma de Recibido]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="68" width="598" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Nombre_de_la_compania-name}+" | "+$F{Calle-street} + " | TEL. " + $F{Telefono-phone}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,24 @@
+<openerp>
+<data>
+
+        <!-- Add fields to Sale Order -->
+
+        <record model="ir.ui.view" id="inhrt_pos_order_form_view">
+            <field name="name">inherit.pos.order.form.view</field>
+            <field name="model">pos.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='lines']/tree/field[@name='product_id']" position="before">
+                    <field name="category_id"/>
+                </xpath>
+                <xpath expr="//field[@name='lines']/tree/field[@name='product_id']" position="replace">
+                    <field name="product_id" on_change="onchange_product_id(parent.pricelist_id,product_id,qty,parent.partner_id)" domain="['|',('categ_id','=',category_id),('categ_id','=',False)]"/>
+                </xpath> 
+            </data>
+            </field>
+        </record>
+
+</data>
+</openerp>

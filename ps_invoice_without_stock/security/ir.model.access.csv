@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sale_order_invoice_stock_user,sale_order_invoice_stock,model_sale_order_invoice_stock,account.group_account_user,1,1,1,1
+sale_order_invoice_stock_manager,sale_order_invoice_stock,model_sale_order_invoice_stock,account.group_account_manager,1,1,1,1
+sale_order_invoice_stock_user_sale,sale_order_invoice_stock,model_sale_order_invoice_stock,base.group_sale_salesman,1,1,1,1
+sale_order_invoice_stock_manager_sale,sale_order_invoice_stock,model_sale_order_invoice_stock,base.group_sale_manager,1,1,1,1
+

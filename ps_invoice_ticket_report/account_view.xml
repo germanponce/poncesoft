@@ -1,0 +1,30 @@
+<openerp>
+<data>
+
+    <!-- Creacion del Reporte Detallado -->
+    <record id="invoice_ticket_jasper_report" model="ir.actions.report.xml">
+            <field name="name">Factura_Ticket</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">account.invoice</field>
+            <field name="report_name">Factura_Ticket</field>
+            <field name="report_rml">ps_invoice_ticket_report/report/Factura-2013-Final.jrxml</field>
+            <field name="report_type">pdf</field>
+            <field name="jasper_report">1</field>
+            <field name="attachment">1</field>
+            <field name="jasper_output">pdf</field> 
+        </record>
+        <!-- Add fields to Stock Picking-->
+
+        <record model="ir.ui.view" id="view_invoice_ps_inherit_ticket_form" >
+        <field name="name">account.invoice.form.inherit.ticket</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form" />
+        <field name="arch" type="xml">
+            <field name="state" position="before" >
+                <button string="Factura Ticket" name="print_invoice_ticket" icon="stock_gantt" type="object" class="oe_highlight" attrs="{'invisible':[('state','=','cancel')]}" />
+            </field>
+        </field>
+    </record>
+
+</data>
+</openerp>

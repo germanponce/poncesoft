@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    <menuitem  name="Fcturación Electronica" id="invoice_cfdi_menu" parent="portal.portal_menu" sequence="1" groups="portal_cfdi_manager"/>
+
+
+        <record id="wizard_invoice_portal_form_view" model="ir.ui.view">
+            <field name="name">wizard.invoice.portal.cfdi.form</field>
+            <field name="model">wizard.invoice.portal.cfdi</field>
+            <field name="arch" type="xml">
+                <form string="Solicitud Facturacion Electronica CFDI" version="7.0">
+                    <h1>Solicitud Facturación Electronica CFDI</h1>
+                    
+                    <div  style="margin-right: 320px; max-width: 900px;">
+                        <group>
+                            <group>
+                                <field name="rfc" placeholder="DHTD8904G58..." />
+                                <field name="sale_ref" placeholder="SO0001..." />
+                            </group>
+                            
+                        </group>
+                    </div>
+                    <div style="width: 300px; float:right;">
+                        <field name="company_ids" nolabel="1" widget="many2many_kanban" class="oe_portal_crm_office" colspan="2">
+                            <kanban>
+                                <field name="name"/>
+                                <field name="email"/>
+                                <field name="phone"/>
+                                <field name="street"/>
+                                <field name="street2"/>
+                                <field name="zip"/>
+                                <field name="city"/>
+                                <field name="country_id" options='{"no_open": True}'/>
+                                <field name="state_id" options='{"no_open": True}'/>
+                                <templates>
+                                    <t t-name="kanban-box">
+                                        <h4><field name="name"/></h4>
+                                        <ul class="oe_portal_crm_address">
+                                            <li t-if="record.street"><field name="street"/></li>
+                                            <li t-if="record.street2"><field name="street2"/></li>
+                                            <li t-if="record.zip"><field name="zip"/></li>
+                                            <li t-if="record.city"><field name="city"/></li>
+                                            <li t-if="record.country_id"><field name="country_id"/></li>
+                                        </ul>
+                                        <ul class="oe_portal_crm_contact_info">
+                                            <li t-if="record.phone"><field name="phone"/></li>
+                                            <li t-if="record.email.raw_value">
+                                                <a title="Mail" t-att-href="'mailto:'+record.email.value">
+                                                <field name="email"/>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </t>
+                                </templates>
+                            </kanban>
+                        </field>
+                        <div class="oe_portal_crm_team">
+
+                        </div>
+                    </div>
+                    <div>
+                        <button string="Solicitar CFDI" icon="gtk-execute" name="get_invoice" type="object" class="oe_highlight"/>
+                        ó
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+<!--       <record id="wizard_invoice_portal_form_view" model="ir.ui.view">
+            <field name="name">wizard.invoice.portal.cfdi.form</field>
+            <field name="model">wizard.invoice.portal.cfdi</field>
+            <field name="arch" type="xml">
+              <form string="Solicitud Facturacion CFDI" version="7.0">
+                <sheet>
+                  <field name="rfc" placeholder="DHTD8904G58..." />
+                  <field name="sale_ref" placeholder="SO0001..."/>
+                </sheet>
+                  
+                  <footer>
+                    <center>
+                      <button string="Solicitar CFDI" icon="gtk-execute" name="submit" type="object" class="oe_highlight"/>
+                        ó
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </center>
+                  </footer>
+             </form>
+            </field>
+        </record> -->
+
+        <record id="action_wizard_invoice_portals" model="ir.actions.act_window">
+            <field name="name">Solicitud de Facturación</field>
+            <field name="res_model">wizard.invoice.portal.cfdi</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_invoice_portal_form_view"/>
+            <field name="target">inline</field>
+        </record>
+
+        <!-- attach it to the portal menu -->
+        <menuitem id="menu_wizard_invoice_portal_menu"
+            parent="invoice_cfdi_menu" action="action_wizard_invoice_portals" sequence="1" groups="portal_cfdi_manager"/>
+
+
+    </data>
+</openerp>

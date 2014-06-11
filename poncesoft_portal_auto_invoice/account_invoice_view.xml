@@ -1,0 +1,19 @@
+<openerp>
+<data>
+
+<!-- Add Report to Invoice -->
+
+    <record id="account_invoice_portal_cfdi_1" model="ir.actions.report.xml">
+        <field name="name">account_invoice_portal_cfdi</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">account.invoice</field>
+        <field name="report_name">account_invoice_portal_cfdi_report</field>
+        <field name="report_rml">hesatec_portal_get_invoice_cfdi/report/ir_actions_report_xml_file_75.jrxml</field>
+        <field name="report_type">pdf</field>
+        <field name="jasper_report">1</field>
+        <field name="attachment">1</field>
+        <field name="jasper_output">pdf</field> 
+    </record>
+
+</data>
+</openerp>

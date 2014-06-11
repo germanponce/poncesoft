@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>  
+
+    <record id="invoice_special_pos" model="res.groups"> <!-- en res.groups siempre se va almacenar nuestro record el id es nuetsro id de nuestro grupo, para definir las reglasd e cada usuario utilizamos archivos separados por com o archivos csv -->
+        <field name="name">Facturacion Especial</field>
+        <field name="comment">Los Usuarios de Este Grupo pueden autorizar la facturacion sin Stock etc...</field>
+    </record>
+
+
+        <!-- Creando la Vista para la Devolucion de Productos-->
+
+         <record id="sale_order_invoice_stock_form" model="ir.ui.view">
+            <field name="name">Autorizar Facturacion</field>
+            <field name="model">sale.order.invoice.stock</field>
+            <field name="arch" type="xml">
+              <form string="Devolucion de Productos" version="7.0">
+                    <sheet>
+                       <group>
+                        <field name="password" password="True" />
+                       </group>
+                       <p/>
+                       <center><h3>Escriba correctamente su contraseña respetando Mayusculas y Minusculas, pulse "Autorizar"</h3></center>
+                    </sheet>
+                  <footer>
+                    <center>
+                      <button name="auth" string="Autorizar" icon="gtk-execute" type="object" class="oe_highlight"/>
+                      ó
+                      <button string="Cancel" class="oe_link" special="cancel"/>
+                    </center>
+                  </footer>
+             </form>
+            </field>
+        </record>
+
+
+        <act_window name="Autorizar Facturacion"
+            res_model="sale.order.invoice.stock"
+            src_model="sale.order.invoice.stock"
+            key2="client_action_multi"
+            multi="True"
+            view_mode="form"
+            view_type="form"
+            target="new"
+            id="action_sale_order_invoice_stock"/>
+
+        <!--================FORM VIEW===============-->
+        <record id="view_sale_inherit_ps_button" model="ir.ui.view">
+            <field name="name">sale.order.ps.button</field>
+            <field name="model">sale.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                 <field name="state" position="before">
+                    <field name="invoice_without_stock" invisible="1" />
+                    <button name="%(action_sale_order_invoice_stock)d" string="Autorizar Venta" icon="terp-dolar_ok!" type="action" attrs="{'invisible':[('invoice_without_stock','=',True)]}"/>
+                 </field>
+            </field>
+        </record>   
+
+    </data>
+</openerp>

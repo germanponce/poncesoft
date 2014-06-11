@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!--  Creando la Vista para el Reporte-->
+<!--     <report id="stock_receipt_report_id" string="Autorizacion de Mercancia"
+    model="stock.picking.out" name="report.stock.receipt.report"
+    rml="poncesoft_stocks_receipt_report/report/stock_receipt.rml" header="False"/> --> <!-- header="False" quita la cabecera y el pie -->
+
+    <!-- Creacion del Reporte  -->
+    <record id="poncesoft_stocks_receipt_report" model="ir.actions.report.xml">
+            <field name="name">Autorizacion_de_Mercancia</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">stock.picking.out</field>
+            <field name="report_name">Autorizacion_de_Mercancia</field>
+            <field name="report_rml">poncesoft_stocks_receipt_report/report/Autorizacion_de_Mercancia.jrxml</field>
+            <field name="report_type">pdf</field>
+            <field name="jasper_report">1</field>
+            <field name="attachment">1</field>
+            <field name="jasper_output">pdf</field> 
+        </record>
+
+
+        <!-- Vista para el Asistente -->
+      <record id="view_stock_exit_products" model="ir.ui.view">
+            <field name="name">stock.exit.products.form</field>
+            <field name="model">stock.exit.products</field>
+            <field name="arch" type="xml">
+            <form string="Actualización de Salida de Mercancia" version="7.0">
+                <sheet>
+                <separator string="Datos para la Salida" />
+                   <group col="4">
+                        <field name="date_exit" required="1"/>
+                        <field name="placa" required="1"/>
+                        <field name="conductor" required="1"/>
+                        
+                   </group>
+                   <field name="notes_exit" placeholder="Reistro  de Observaciones"/>
+                </sheet>
+              <footer>
+                <center>
+                  <button name="exit_register" string="Autorizar" icon="gtk-execute" type="object" class="oe_highlight"/>
+                  ó
+                  <button string="Cancelar" class="oe_link" special="cancel"/>
+                </center>
+              </footer>
+            </form>
+            </field>
+        </record>
+
+        <record id="action_stock_exit_products" model="ir.actions.act_window">
+            <field name="name">Actualizacion de Salida de Mercancia</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.exit.products</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</openerp>

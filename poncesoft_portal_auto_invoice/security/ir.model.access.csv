@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+wizard_invoice_portal_cfdi_manager,wizard_invoice_portal_cfdi,model_wizard_invoice_portal_cfdi,portal_cfdi_manager,1,1,1,1
+portal_cfdi_invoice_manager,portal_cfdi_invoice,model_portal_cfdi_invoice,portal_cfdi_manager,1,1,1,1
+portal_cfdi_invoice_line_manager,portal_cfdi_invoice_line,model_portal_cfdi_invoice_line,portal_cfdi_manager,1,1,1,1

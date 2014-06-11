@@ -1,0 +1,60 @@
+<openerp>
+<data>
+
+        <!--  Creando la Vista para el Reporte de Ticket De Jasper Reports-->
+        <record id="pos_order_jasper_report" model="ir.actions.report.xml">
+            <field name="name">Anticipo</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">pos.order</field>
+            <field name="report_name">Ticket</field>
+            <field name="report_rml">ps_pos_pre_pays/report/Ticket.jrxml</field>
+            <field name="report_type">pdf</field>
+            <field name="jasper_report">1</field>
+            <field name="attachment">1</field>
+            <field name="jasper_output">pdf</field> 
+        </record>
+
+           <!-- VISTA PARA EL ASISTENTE DE PAGOS DE APARTADOS -->
+
+      <record id="view_pre_make_payment" model="ir.ui.view">
+            <field name="name">pre.make.payment.form</field>
+            <field name="model">pre.make.payment</field>
+            <field name="arch" type="xml">
+            <form string="Pagos de Apartados" version="7.0">
+                <group>
+                    <field name="journal_id" domain="[('pay_method_bool','=',True)]" />
+                    <field name="amount" />
+                    <field name="payment_name"/>
+                </group>
+                <footer>
+                    <button name="check" string="Realizar Pago" type="object" class="oe_highlight"/>
+                    or 
+                    <button icon="gtk-stop" special="cancel" string="_Cancelar" class="oe_link"/>
+                </footer>
+            </form>
+            </field>
+        </record>
+        <record id="action_pre_make_payment" model="ir.actions.act_window">
+            <field name="name">Abonos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pre.make.payment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="view_inherit_pos_order_search_012" model="ir.ui.view">
+            <field name="name">pos.order.poncesoft</field>
+            <field name="model">pos.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <field name="state" position="before" >
+                    <button name="%(action_pre_make_payment)d" string="Abonos" icon="terp-dolar_ok!" type="action" attrs="{'invisible':[('state','!=','draft')]}"/>
+                    <button name="print_jasper_report" string="Imprimir Abono" icon="stock_gantt" type="object" class="oe_highlight"/>
+                </field>
+            </field>
+        </record>
+
+</data>
+</openerp>

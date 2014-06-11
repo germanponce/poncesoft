@@ -1,0 +1,39 @@
+<openerp>
+<data>
+
+    <!-- Creacion del Reporte Detallado -->
+    <record id="invoice_sale_order_jasper_report" model="ir.actions.report.xml">
+            <field name="name">Factura_Detalle_Ventas</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">sale.order</field>
+            <field name="report_name">Factura_Detalle_Ventas</field>
+            <field name="report_rml">ps_sale_invoice_report/report/Pedidos_Venta_Factura.jrxml</field>
+            <field name="report_type">pdf</field>
+            <field name="jasper_report">1</field>
+            <field name="attachment">1</field>
+            <field name="jasper_output">pdf</field> 
+        </record>
+        <!-- Add fields to Stock Picking-->
+
+        <record model="ir.ui.view" id="view_invoice_ps_inherit_form" >
+        <field name="name">account.invoice.form.inherit</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form" />
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Pedidos de Venta">
+                    <field name="sale_order_ids" readonly="1" editable="bottom">
+                        <tree string="Pedidos de Venta">
+                            <field name="order_id"/>
+                        </tree>
+                    </field>
+                </page>
+            </notebook>
+            <field name="state" position="before" >
+                <button string="Factura Detallada" name="print_jasper_report" icon="stock_gantt" type="object" class="oe_highlight" />
+            </field>
+        </field>
+    </record>
+
+</data>
+</openerp>
